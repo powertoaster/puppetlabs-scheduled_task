@@ -4,21 +4,22 @@
 
 1. [説明](#description)
 2. [セットアップ - scheduled_task導入の基本](#setup)
-    * [scheduled_taskモジュールが影響を与えるもの:](#what-scheduled_task-affects)
-    * [セットアップ要件](#setup-requirements)
     * [scheduled_taskモジュールの利用方法](#beginning-with-scheduled_task)
-3. [使用 - 設定オプションと追加機能](#usage)
+3. [使用方法 - 設定オプションと追加機能](#usage)
 4. [参考 - モジュールの機能と動作について](#reference)
-5. [制約 - OS互換性など](#limitations)
+5. [制約事項 - OSの互換性など](#limitations)
 6. [開発 - モジュール貢献についてのガイド](#development)
 
+<a id="description"></a>
 ## 説明
 
 このモジュールは、タスク管理に最新のVersion 2 Windows APIを使用できる新しい[scheduled_task](https://puppet.com/docs/puppet/latest/types/scheduled_task.html)プロバイダを追加するものです。
 旧バージョンのAPIは改良点や新機能を受けとれないため、Windows上のスケジュールされたタスクに改良点を利用したい場合は、V2 APIを使用する必要があります。
 
+<a id="setup"></a>
 ## セットアップ
 
+<a id="beginning-with-scheduled_task"></a>
 ### scheduled_taskモジュールの利用方法
 
 scheduled_taskモジュールは、Puppet [scheduled_task](https://puppet.com/docs/puppet/latest/types/scheduled_task.html)リソースを適応させ、最新APIを用いて実行するようにします。
@@ -34,7 +35,8 @@ scheduled_task { 'Run Notepad':
 }
 ~~~
 
-## 使用
+<a id="usage"></a>
+## 使用方法
 
 スケジュールされたタスクは通常、スクリプトを1回または定期的に開始するために用いられます。
 この最初の例では、クリーンアップスクリプトを1回だけ実行するようにスケジュールします。
@@ -177,6 +179,7 @@ scheduled_task { 'example_notepad':
 }
 ~~~
 
+<a id="reference"></a>
 ## リファレンス
 
 ### プロバイダ
@@ -322,10 +325,12 @@ Windows Scheduled Taskをインストールして管理します。
 
 コマンドを開始するディレクトリのフルパス。
 
-## 制約
+<a id="limitations"></a>
+## 制約事項
 
 * Windows Server 2008以上およびWindows 7以上でのみサポートされています。
 
+<a id="development"></a>
 ## 開発
 
 Puppet ForgeのPuppetモジュールはオープンプロジェクトで、良い状態に保つためには、コミュニティの貢献が必要不可欠です。Puppetが役に立つはずでありながら、私たちがアクセスできないプラットフォームやハードウェア、ソフトウェア、デプロイ構成は無数にあります。そのため、できる限り簡単に変更に貢献し、みなさまの環境で私たちのモジュールが機能できるようにすることを目標にしています。最高の状態に維持できるようにするために、コントリビュータが従う必要のあるいくつかのガイドラインが存在します。詳細については、[モジュール貢献ガイド](https://docs.puppet.com/forge/contributing.html)を参照してください。
